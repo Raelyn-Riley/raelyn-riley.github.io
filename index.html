@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raelyn Rose — Mechanical & Systems Technician</title>
+<meta name="description" content="Raelyn Rose — mechanical and systems technician, Richmond CA. Engines, printers, Linux servers, and the scripts that run them.">
+<style>
+/* ============================================================
+   RAELYN ROSE — portfolio v2 (from scratch, Sunday 9/6/26)
+   Brief: futuristic · cyberpunk · brutal · practical.
+   One file. No frameworks, no CDN, no fonts fetched, no trackers.
+   ============================================================ */
+:root{
+  --bg:#07080b; --bg2:#0c0e13; --panel:#10131a; --line:#1f2430; --line2:#2c3446;
+  --ink:#e7eaf2; --dim:#8a93a8; --mute:#5d6578;
+  --hot:#4da3ff; --hot2:#1e6fd9; --warn:#ffb020; --ok:#3ddc84;
+  --mono:ui-monospace,"JetBrains Mono","Fira Code","Cascadia Code",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,sans-serif;
+  --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--ink); font:16px/1.55 var(--sans);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:48px 48px; background-position:-1px -1px;
+}
+::selection{background:var(--hot);color:#000}
+a{color:var(--hot);text-decoration:none}
+a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.mono{font-family:var(--mono)}
+
+/* ---- top bar ---- */
+header{position:sticky;top:0;z-index:10;background:rgba(7,8,11,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:52px;gap:12px}
+.brand{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.brand b{color:var(--hot)}
+nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);padding:8px 10px;border:1px solid transparent;white-space:nowrap}
+nav a:hover{color:var(--ink);border-color:var(--line2);text-decoration:none}
+@media (max-width:560px){
+  .brand{font-size:12px;letter-spacing:.06em}
+  nav a{font-size:11px;padding:8px 6px;letter-spacing:.03em}
+  nav a.res{display:none}   /* résumé is in the hero + contact; the top bar must fit a phone without scrolling */
+}
+
+/* ---- hero ---- */
+.hero{padding:64px 0 40px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(77,163,255,.06),transparent 60%)}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--warn)}
+.tag::before{content:"// "}
+h1{font-size:clamp(40px,8.5vw,96px);line-height:.92;letter-spacing:-.03em;text-transform:uppercase;font-weight:900;margin:14px 0 18px}
+h1 #w{color:var(--hot);display:inline-block;min-width:1ch}
+h1 #w.noise{color:var(--dim)}
+.lede{font-size:clamp(17px,2.2vw,22px);max-width:760px;color:var(--ink);font-weight:500}
+.lede em{font-style:normal;color:var(--hot)}
+.sub{margin-top:12px;max-width:760px;color:var(--dim)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:12px 16px;border:1px solid var(--hot);color:var(--hot);background:transparent}
+.btn.solid{background:var(--hot);color:#000;font-weight:700}
+.btn:hover{text-decoration:none;background:var(--hot2);color:#fff;border-color:var(--hot2)}
+
+/* ---- status readout ---- */
+.status{margin-top:34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border:1px solid var(--line2);background:var(--panel)}
+.status div{padding:12px 14px;border-right:1px solid var(--line);font-family:var(--mono);font-size:12.5px;line-height:1.5}
+.status div:last-child{border-right:0}
+.status span{display:block;color:var(--mute);letter-spacing:.1em;text-transform:uppercase;font-size:10.5px;margin-bottom:3px}
+.status .ok{color:var(--ok)}
+.status .ok::before{content:"● ";}
+
+/* ---- sections ---- */
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
+.sh .n{font-family:var(--mono);font-size:12px;color:var(--warn);letter-spacing:.12em}
+.sh h2{font-size:clamp(26px,4vw,40px);text-transform:uppercase;letter-spacing:-.02em;font-weight:900;line-height:1}
+.sh .rule{flex:1;height:1px;background:var(--line2);align-self:center}
+.sh .hint{font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.06em;white-space:nowrap}
+
+/* ---- builds ---- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;background:var(--line2);border:1px solid var(--line2)}
+.card{background:var(--panel);padding:20px 20px 18px;position:relative;display:flex;flex-direction:column;gap:10px;min-height:100%}
+.card::before{content:attr(data-n);position:absolute;top:14px;right:16px;font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.1em}
+.card:hover{background:var(--bg2);box-shadow:inset 3px 0 0 var(--hot)}
+.card.wide{grid-column:span 2}#access .card{grid-column:1/-1}
+@media (max-width:720px){.card.wide{grid-column:span 1}}
+.card h3{font-size:19px;line-height:1.2;letter-spacing:-.01em;padding-right:36px;text-transform:uppercase;font-weight:800}
+.card .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--hot)}
+.card p{color:var(--dim);font-size:15px}
+.card p b{color:var(--ink);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.chips i{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--dim);border:1px solid var(--line2);padding:3px 7px;background:var(--bg)}
+@font-face{font-family:"OpenDyslexic";src:url(fonts/OpenDyslexic-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"OpenDyslexic";src:url(fonts/OpenDyslexic-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
+.dys{font-family:"OpenDyslexic",var(--sans);font-size:15px;line-height:1.75;margin-top:10px}
+.dys a{text-decoration:underline;text-underline-offset:3px}
+.dys .blc{color:var(--fg)}
+.card a.more{font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+details.x summary{cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--hot);list-style:none;width:max-content}
+details.x summary::before{content:"+ "}details.x[open] summary::before{content:"− "}
+details.x[open] summary{margin-bottom:6px}details.x p{margin:0}
+
+/* ---- skills ---- */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line2);border:1px solid var(--line2)}
+.sk{background:var(--panel);padding:18px 18px 16px}
+.sk h3{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--hot);margin-bottom:10px}
+.sk ul{list-style:none}
+.sk li{color:var(--dim);font-size:14.5px;padding:4px 0 4px 16px;position:relative;border-top:1px dashed var(--line)}
+.sk li:first-child{border-top:0}
+.sk li::before{content:">";position:absolute;left:0;color:var(--mute);font-family:var(--mono)}
+
+/* ---- experience ---- */
+.xp{border:1px solid var(--line2);background:var(--panel)}
+.job{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:18px 20px;border-top:1px solid var(--line)}
+.job:first-child{border-top:0}
+.job .when{font-family:var(--mono);font-size:12px;color:var(--warn);letter-spacing:.06em;padding-top:4px}
+.job h3{font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+.job .org{font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.04em;margin:2px 0 8px}
+.job p{color:var(--dim);font-size:15px}
+@media (max-width:640px){.job{grid-template-columns:1fr;gap:6px}}
+
+/* ---- contact / footer ---- */
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line2);border:1px solid var(--line2)}
+.contact a{display:block;background:var(--panel);padding:22px 20px;color:var(--ink);font-family:var(--mono);font-size:14px;letter-spacing:.04em}
+.contact a span{display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.contact a:hover{background:var(--hot);color:#000;text-decoration:none}
+.contact a:hover span{color:#000}
+footer{padding:28px 0 40px;font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.04em;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">RAELYN<b>_</b>ROSE</div>
+    <nav>
+      <a href="#builds">Builds</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a class="res" href="Raelyn_Pledger_Resume.pdf">Résumé</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="tag">Mechanical + Systems Technician · Richmond, CA</div>
+    <h1>I build,<br>break, and<br>repair <span id="w" data-words="MACHINES|ENGINES|PRINTERS|SERVERS|AGENTS|SYSTEMS|MACHINES">machines</span></h1>
+    <p class="lede">Engines, printers, servers, and the scripts that run them. Mechanical repair and Linux systems, both hands-on.</p>
+    <div class="cta">
+      <a class="btn solid" href="#builds">See the builds</a>
+      <a class="btn" href="Raelyn_Pledger_Resume.pdf">Résumé (PDF)</a>
+      <a class="btn" href="https://github.com/Raelyn-Riley">GitHub</a>
+    </div>
+
+    <div class="status">
+      <div><span>Status</span><b class="ok">Available now</b></div>
+      <div><span>Looking for</span>Technician role: assembly · test · repair</div>
+      <div><span>Base</span>Richmond, CA · can commute</div>
+    </div>
+  </div>
+</section>
+
+<section id="builds">
+  <div class="wrap">
+    <div class="sh"><span class="n">[01]</span><h2>Builds</h2><span class="rule"></span></div>
+    <div class="grid">
+
+      <article class="card wide" data-n="B-01">
+        <div class="k">AI · Automation</div>
+        <h3>Project RILEY</h3>
+        <p>A self-hosted AI agent that runs my infrastructure and my day. It lives as its own user on my Linux workstation, keeps its memory in a git-backed document system I designed, and hands itself off between sessions with nobody at the keyboard. It administers the fleet over a Tailscale mesh, pushes schedule and traffic alerts to my phone, slices and starts 3D prints and checks them by camera, watches training runs, and follows scripted troubleshooting paths when something breaks: a killed session is found, diagnosed, and moved home automatically.</p>
+        <details class="x"><summary>more</summary>
+          <p>Front end is a phone app I designed: chat, notes, calendar, file viewer, print jobs, and a lockdown mode that revokes the agent's tools while someone else is holding the phone. Every action the agent takes is logged and every fact it relies on is a file I can read. Built in bash and Python on systemd, with ntfy for push and a small local model trained alongside it.</p>
+        </details>
+        <div class="chips"><i>Linux</i><i>systemd</i><i>Tailscale</i><i>Python</i><i>ntfy</i><i>PWA</i></div>
+      </article>
+
+      <article class="card" data-n="B-02">
+        <div class="k">Automotive</div>
+        <h3>Bruce — 1971 Honda N600</h3>
+        <p>A 55-year-old Honda I keep running.</p>
+        <details class="x"><summary>more</summary>
+          <p>Carburetor pulled, disassembled, jets and passages cleared, reassembled, started first crank. Starter bolts, fuel delivery, and vacuum faults diagnosed one variable at a time.</p>
+        </details>
+        <div class="chips"><i>engine</i><i>carburetion</i><i>diagnosis</i></div>
+      </article>
+
+      <article class="card wide" data-n="B-03">
+        <div class="k">Fabrication · Additive</div>
+        <h3>3D printing</h3>
+        <p>Multiple manufacturers, multiple materials, multiple slicers. Managed remotely through automated systems.</p>
+        <div class="chips"><i>Bambu · Prusa · Creality · Artillery</i><i>PLA · PETG · TPU · ABS</i><i>Orca · Bambu Studio · PrusaSlicer · Cura</i></div>
+      </article>
+
+
+      <article class="card" data-n="B-04">
+        <div class="k">Repair</div>
+        <h3>Things I have fixed</h3>
+        <p>Cars, computers, servers, and household appliances. Find the cause, fix it, keep it running.</p>
+        <div class="chips"><i>diagnosis</i><i>mechanical</i><i>electrical</i></div>
+      </article>
+
+
+      <article class="card wide" data-n="B-05">
+        <div class="k">Hardware · Reuse</div>
+        <h3>Reused e-waste</h3>
+        <p>Most of the hardware I run came out of e-waste and giveaway piles. I repair it, upgrade it, and put it back to work: desktops, laptops, a printer, a headset, a home server.</p>
+        <div class="chips"><i>e-waste</i><i>repair</i><i>upgrade</i><i>reuse</i></div>
+      </article>
+
+      <article class="card" data-n="B-06">
+        <div class="k">AI</div>
+        <h3>Training models</h3>
+        <p>I dabble in training AI models. Current one: a 124M-parameter model trained from scratch on open-source book libraries, on a consumer GPU. Also published <b>Throughline</b>, a GPL framework for persistent-memory agents.</p>
+        <a class="more" href="https://github.com/Raelyn-Riley/Throughline">github.com/Raelyn-Riley/Throughline →</a>
+        <div class="chips"><i>PyTorch</i><i>Python</i><i>GPL-3.0</i></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="access">
+  <div class="wrap">
+    <div class="sh"><span class="n">[02]</span><h2>Accessibility</h2><span class="rule"></span></div>
+    <div class="grid">
+      <article class="card wide" data-n="A-01">
+        <div class="k">Personal</div>
+        <h3>ADHD and dyslexia</h3>
+        <p>I have both. They haven't stopped me, and technology is why. I believe technology and AI are the keys to leveling the playing field and accommodating every kind of brain. The tools on this page are how I read, remember, and get things done.</p>
+        <details class="x"><summary>more</summary>
+          <div class="dys">Two proven techniques, combined, make reading easier despite dyslexia. The <a href="https://opendyslexic.org">OpenDyslexic</a> font helps with individual words. A <a href="https://www.beelinereader.com">BeeLine</a>-style gradient across each line makes line tracking easy: the color one line ends on is the color the next begins with. I use five carefully chosen colors instead of BeeLine's usual three, so finding my place again after looking away is effortless. This paragraph is set exactly the way I read.</div>
+        </details>
+        <div class="chips"><i>OpenDyslexic</i><i>BeeLine</i><i>5-color gradient</i></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sh"><span class="n">[03]</span><h2>Skills</h2><span class="rule"></span></div>
+    <div class="skills">
+      <div class="sk"><h3>Mechanical</h3><ul>
+        <li>Automotive: engine, fuel, electrical, brakes</li><li>Locksmithing: install, repair, rekey from spec</li><li>Hand and power tools</li></ul></div>
+      <div class="sk"><h3>Fabrication</h3><ul>
+        <li>3D printing: Bambu A1, Prusa MK2</li><li>Onshape: parts modeled from measured hardware</li><li>Soldering, PCB assembly</li></ul></div>
+      <div class="sk"><h3>Systems</h3><ul>
+        <li>Linux: Fedora, NixOS, Raspberry Pi</li><li>systemd, RAID, ZFS, LUKS, Tailscale</li><li>bash, Python</li><li>German</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sh"><span class="n">[04]</span><h2>Contact</h2><span class="rule"></span><span class="hint">email preferred</span></div>
+    <div class="contact">
+      <a href="mailto:ladyraelynrose@gmail.com"><span>Email</span>ladyraelynrose@gmail.com</a>
+      <a href="https://github.com/Raelyn-Riley"><span>GitHub</span>github.com/Raelyn-Riley</a>
+      <a href="Raelyn_Pledger_Resume.pdf"><span>Résumé</span>Raelyn_Pledger_Resume.pdf</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© 2026 Raelyn Rose · Richmond, CA</span>
+  <span>one html file · no frameworks · no trackers</span>
+</footer>
+
+
+<script>
+/* DECODE: the last word of the headline resolves out of glyph noise, laps through the things I fix, settles. */
+(function(){
+  const el=document.getElementById('w'); if(!el) return;
+  const words=el.dataset.words.split('|'), GL='▓▒░#%&/<>_-=+*01:;', rnd=n=>GL[Math.floor(Math.random()*GL.length)];
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent=words[0]; return; }
+  function decode(target, done){
+    const len=target.length; let frame=0, settled=0; el.classList.add('noise');
+    const id=setInterval(()=>{
+      frame++; if(frame%2===0 && settled<len) settled++;
+      let s=''; for(let i=0;i<len;i++) s+= i<settled ? target[i] : rnd();
+      el.textContent=s;
+      if(settled>=len){ clearInterval(id); el.classList.remove('noise'); done&&done(); }
+    },38);
+  }
+  let i=0; (function next(){ decode(words[i], ()=>{ i++; if(i<words.length) setTimeout(next, i===words.length-1?900:1100); }); })();
+})();
+
+/* BEELINE: the accessibility blurb is painted the way I read. Each visual line runs
+   color[i%5] → color[(i+1)%5], so a wrap lands on the color the next line starts with. */
+(function(){
+  const BL=["#428cdb","#db7bac","#50b57b","#9f90db","#d09a4f"].map(c=>[1,3,5].map(i=>parseInt(c.slice(i,i+2),16)));
+  function wrap(el){ if(el.dataset.bl) return; el.dataset.bl='1';
+    const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.nodeValue.trim()?1:2});
+    const nodes=[]; let n; while((n=w.nextNode())) nodes.push(n);
+    for(const t of nodes){ const f=document.createDocumentFragment();
+      for(const ch of t.nodeValue){ if(/\s/.test(ch)) f.appendChild(document.createTextNode(ch));
+        else{ const sp=document.createElement('span'); sp.className='blc'; sp.textContent=ch; f.appendChild(sp);} }
+      t.parentNode.replaceChild(f,t); } }
+  function paint(el){ const sp=el.querySelectorAll('.blc'); if(!sp.length) return;
+    const tops=Array.from(sp,x=>x.getBoundingClientRect().top); const lines=[]; let cur=null,ct=null;
+    tops.forEach((t,i)=>{ if(ct===null||Math.abs(t-ct)>2){cur=[];lines.push(cur);ct=t;} cur.push(i); });
+    lines.forEach((idx,li)=>{ const a=BL[li%BL.length],b=BL[(li+1)%BL.length],n=idx.length;
+      idx.forEach((k,j)=>{ const t=n>1?j/(n-1):0;
+        sp[k].style.color='rgb('+[0,1,2].map(c=>Math.round(a[c]+(b[c]-a[c])*t)).join(',')+')'; }); }); }
+  const els=document.querySelectorAll('.dys'); if(!els.length) return;
+  const all=()=>els.forEach(el=>{wrap(el);paint(el);});
+  let tmr=null; const later=()=>{clearTimeout(tmr);tmr=setTimeout(all,120);};
+  all(); window.addEventListener('resize',later);
+  document.querySelectorAll('details').forEach(d=>d.addEventListener('toggle',later));
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(later);
+})();
+</script>
+</body>
+</html>
