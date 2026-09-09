@@ -37,78 +37,78 @@ a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-o
 /* ---- top bar ---- */
 header{position:sticky;top:0;z-index:10;background:rgba(7,8,11,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:52px;gap:12px}
-.brand{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.brand{font-family:var(--mono);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
 .brand b{color:var(--hot)}
 nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
 nav::-webkit-scrollbar{display:none}
-nav a{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);padding:8px 10px;border:1px solid transparent;white-space:nowrap}
+nav a{font-family:var(--mono);font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);padding:8px 10px;border:1px solid transparent;white-space:nowrap}
 nav a:hover{color:var(--ink);border-color:var(--line2);text-decoration:none}
 @media (max-width:560px){
-  .brand{font-size:12px;letter-spacing:.06em}
-  nav a{font-size:11px;padding:8px 6px;letter-spacing:.03em}
+  .brand{font-size:14px;letter-spacing:.06em}
+  nav a{font-size:12.5px;padding:8px 6px;letter-spacing:.03em}
   nav a.res{display:none}   /* résumé is in the hero + contact; the top bar must fit a phone without scrolling */
 }
 
 /* ---- hero ---- */
 .hero{padding:64px 0 40px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(77,163,255,.06),transparent 60%)}
-.tag{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--warn)}
+.tag{font-family:var(--mono);font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--warn)}
 .tag::before{content:"// "}
 h1{font-size:clamp(40px,8.5vw,96px);line-height:.92;letter-spacing:-.03em;text-transform:uppercase;font-weight:900;margin:14px 0 18px}
 h1 #w{color:var(--hot);display:inline-block;min-width:1ch}
 h1 #w.noise{color:var(--dim)}
-.lede{font-size:clamp(17px,2.2vw,22px);max-width:760px;color:var(--ink);font-weight:500}
+.lede{font-size:clamp(19px,2.4vw,25px);max-width:760px;color:var(--ink);font-weight:500}
 .lede em{font-style:normal;color:var(--hot)}
 .sub{margin-top:12px;max-width:760px;color:var(--dim)}
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.btn{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:12px 16px;border:1px solid var(--hot);color:var(--hot);background:transparent}
+.btn{font-family:var(--mono);font-size:15px;letter-spacing:.06em;text-transform:uppercase;padding:12px 16px;border:1px solid var(--hot);color:var(--hot);background:transparent}
 .btn.solid{background:var(--hot);color:#000;font-weight:700}
 .btn:hover{text-decoration:none;background:var(--hot2);color:#fff;border-color:var(--hot2)}
 
 /* ---- status readout ---- */
 .status{margin-top:34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border:1px solid var(--line2);background:var(--panel)}
-.status div{padding:12px 14px;border-right:1px solid var(--line);font-family:var(--mono);font-size:12.5px;line-height:1.5}
+.status div{padding:12px 14px;border-right:1px solid var(--line);font-family:var(--mono);font-size:14.5px;line-height:1.5}
 .status div:last-child{border-right:0}
-.status span{display:block;color:var(--mute);letter-spacing:.1em;text-transform:uppercase;font-size:10.5px;margin-bottom:3px}
+.status span{display:block;color:var(--mute);letter-spacing:.1em;text-transform:uppercase;font-size:12px;margin-bottom:3px}
 .status .ok{color:var(--ok)}
 .status .ok::before{content:"● ";}
 
 /* ---- sections ---- */
 section{padding:56px 0;border-bottom:1px solid var(--line)}
 .sh{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
-.sh .n{font-family:var(--mono);font-size:12px;color:var(--warn);letter-spacing:.12em}
-.sh h2{font-size:clamp(26px,4vw,40px);text-transform:uppercase;letter-spacing:-.02em;font-weight:900;line-height:1}
+.sh .n{font-family:var(--mono);font-size:14px;color:var(--warn);letter-spacing:.12em}
+.sh h2{font-size:clamp(30px,4.4vw,44px);text-transform:uppercase;letter-spacing:-.02em;font-weight:900;line-height:1}
 .sh .rule{flex:1;height:1px;background:var(--line2);align-self:center}
-.sh .hint{font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.06em;white-space:nowrap}
+.sh .hint{font-family:var(--mono);font-size:13px;color:var(--mute);letter-spacing:.06em;white-space:nowrap}
 
 /* ---- builds ---- */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;background:var(--line2);border:1px solid var(--line2)}
 .card{background:var(--panel);padding:20px 20px 18px;position:relative;display:flex;flex-direction:column;gap:10px;min-height:100%}
-.card::before{content:attr(data-n);position:absolute;top:14px;right:16px;font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.1em}
+.card::before{content:attr(data-n);position:absolute;top:14px;right:16px;font-family:var(--mono);font-size:12.5px;color:var(--mute);letter-spacing:.1em}
 .card:hover{background:var(--bg2);box-shadow:inset 3px 0 0 var(--hot)}
 .card.wide{grid-column:span 2}#access .card{grid-column:1/-1}
 @media (max-width:720px){.card.wide{grid-column:span 1}}
-.card h3{font-size:19px;line-height:1.2;letter-spacing:-.01em;padding-right:36px;text-transform:uppercase;font-weight:800}
-.card .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--hot)}
-.card p{color:var(--dim);font-size:15px}
+.card h3{font-size:22px;line-height:1.2;letter-spacing:-.01em;padding-right:36px;text-transform:uppercase;font-weight:800}
+.card .k{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--hot)}
+.card p{color:var(--dim);font-size:17px}
 .card p b{color:var(--ink);font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
-.chips i{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--dim);border:1px solid var(--line2);padding:3px 7px;background:var(--bg)}
+.chips i{font-style:normal;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--dim);border:1px solid var(--line2);padding:3px 7px;background:var(--bg)}
 @font-face{font-family:"OpenDyslexic";src:url(fonts/OpenDyslexic-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"OpenDyslexic";src:url(fonts/OpenDyslexic-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
-.dys{font-family:"OpenDyslexic",var(--sans);font-size:15px;line-height:1.75;margin-top:10px}
+.dys{font-family:"OpenDyslexic",var(--sans);font-size:17px;line-height:1.75;margin-top:10px}
 .dys a{text-decoration:underline;text-underline-offset:3px}
 .dys .blc{color:var(--fg)}
-.card a.more{font-family:var(--mono);font-size:12px;letter-spacing:.06em}
-details.x summary{cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--hot);list-style:none;width:max-content}
+.card a.more{font-family:var(--mono);font-size:14px;letter-spacing:.06em}
+details.x summary{cursor:pointer;font-family:var(--mono);font-size:14px;letter-spacing:.06em;color:var(--hot);list-style:none;width:max-content}
 details.x summary::before{content:"+ "}details.x[open] summary::before{content:"− "}
 details.x[open] summary{margin-bottom:6px}details.x p{margin:0}
 
 /* ---- skills ---- */
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line2);border:1px solid var(--line2)}
 .sk{background:var(--panel);padding:18px 18px 16px}
-.sk h3{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--hot);margin-bottom:10px}
+.sk h3{font-family:var(--mono);font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--hot);margin-bottom:10px}
 .sk ul{list-style:none}
-.sk li{color:var(--dim);font-size:14.5px;padding:4px 0 4px 16px;position:relative;border-top:1px dashed var(--line)}
+.sk li{color:var(--dim);font-size:16.5px;padding:4px 0 4px 16px;position:relative;border-top:1px dashed var(--line)}
 .sk li:first-child{border-top:0}
 .sk li::before{content:">";position:absolute;left:0;color:var(--mute);font-family:var(--mono)}
 
@@ -116,19 +116,19 @@ details.x[open] summary{margin-bottom:6px}details.x p{margin:0}
 .xp{border:1px solid var(--line2);background:var(--panel)}
 .job{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:18px 20px;border-top:1px solid var(--line)}
 .job:first-child{border-top:0}
-.job .when{font-family:var(--mono);font-size:12px;color:var(--warn);letter-spacing:.06em;padding-top:4px}
-.job h3{font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
-.job .org{font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.04em;margin:2px 0 8px}
-.job p{color:var(--dim);font-size:15px}
+.job .when{font-family:var(--mono);font-size:14px;color:var(--warn);letter-spacing:.06em;padding-top:4px}
+.job h3{font-size:19.5px;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+.job .org{font-family:var(--mono);font-size:14px;color:var(--dim);letter-spacing:.04em;margin:2px 0 8px}
+.job p{color:var(--dim);font-size:17px}
 @media (max-width:640px){.job{grid-template-columns:1fr;gap:6px}}
 
 /* ---- contact / footer ---- */
 .contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line2);border:1px solid var(--line2)}
-.contact a{display:block;background:var(--panel);padding:22px 20px;color:var(--ink);font-family:var(--mono);font-size:14px;letter-spacing:.04em}
-.contact a span{display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.contact a{display:block;background:var(--panel);padding:22px 20px;color:var(--ink);font-family:var(--mono);font-size:16px;letter-spacing:.04em}
+.contact a span{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
 .contact a:hover{background:var(--hot);color:#000;text-decoration:none}
 .contact a:hover span{color:#000}
-footer{padding:28px 0 40px;font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.04em;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+footer{padding:28px 0 40px;font-family:var(--mono);font-size:13px;color:var(--mute);letter-spacing:.04em;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 </style>
 </head>
 <body>
@@ -149,7 +149,7 @@ footer{padding:28px 0 40px;font-family:var(--mono);font-size:11.5px;color:var(--
   <div class="wrap">
     <div class="tag">Mechanical + Systems Technician · Richmond, CA</div>
     <h1>I build,<br>break, and<br>repair <span id="w" data-words="MACHINES|ENGINES|PRINTERS|SERVERS|AGENTS|SYSTEMS|MACHINES">machines</span></h1>
-    <p class="lede">Engines, printers, servers, and the scripts that run them. Mechanical repair and Linux systems, both hands-on.</p>
+    <p class="lede">Engines, printers, servers, and the scripts that run them. Mechanical repair and Linux systems, both hands-on. Everything designed for the people who use it.</p>
     <div class="cta">
       <a class="btn solid" href="#builds">See the builds</a>
       <a class="btn" href="Raelyn_Pledger_Resume.pdf">Résumé (PDF)</a>
@@ -248,9 +248,11 @@ footer{padding:28px 0 40px;font-family:var(--mono);font-size:11.5px;color:var(--
       <div class="sk"><h3>Mechanical</h3><ul>
         <li>Automotive: engine, fuel, electrical, brakes</li><li>Locksmithing: install, repair, rekey from spec</li><li>Hand and power tools</li></ul></div>
       <div class="sk"><h3>Fabrication</h3><ul>
-        <li>3D printing: Bambu A1, Prusa MK2</li><li>Onshape: parts modeled from measured hardware</li><li>Soldering, PCB assembly</li></ul></div>
+        <li>3D printing: Bambu, Prusa, Creality, Artillery</li><li>Parametric modeling: Onshape, from measured hardware</li><li>Soldering, PCB assembly</li></ul></div>
       <div class="sk"><h3>Systems</h3><ul>
-        <li>Linux: Fedora, NixOS, Raspberry Pi</li><li>systemd, RAID, ZFS, LUKS, Tailscale</li><li>bash, Python</li><li>German</li></ul></div>
+        <li>Linux: Fedora, NixOS, Raspberry Pi</li><li>systemd, RAID, ZFS, LUKS, Tailscale</li><li>bash, Python</li></ul></div>
+      <div class="sk"><h3>Design</h3><ul>
+        <li>Human-centered design: built for the people who use them, tested with them</li><li>Accessibility-first interfaces (see [02])</li><li>Conversational German</li></ul></div>
     </div>
   </div>
 </section>
