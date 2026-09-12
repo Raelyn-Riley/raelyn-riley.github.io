@@ -92,6 +92,11 @@ section{padding:56px 0;border-bottom:1px solid var(--line)}
 .card p{color:var(--dim);font-size:17px}
 .card p b{color:var(--ink);font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.card figure{margin:2px 0 0;border:1px solid var(--line2);background:var(--bg);overflow:hidden}
+.card figure img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.card figure figcaption{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--mute);padding:6px 8px;border-top:1px solid var(--line2)}
+.card .figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line2);border:1px solid var(--line2);margin-top:2px}
+.card .figs figure{margin:0;border:0}
 .chips i{font-style:normal;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--dim);border:1px solid var(--line2);padding:3px 7px;background:var(--bg)}
 @font-face{font-family:"OpenDyslexic";src:url(fonts/OpenDyslexic-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"OpenDyslexic";src:url(fonts/OpenDyslexic-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
@@ -182,17 +187,22 @@ footer{padding:28px 0 40px;font-family:var(--mono);font-size:13px;color:var(--mu
       <article class="card" data-n="B-02">
         <div class="k">Automotive</div>
         <h3>Bruce — 1971 Honda N600</h3>
-        <p>A 55-year-old Honda I keep running.</p>
+        <p>A 55-year-old Honda I keep on the road. Engine, electrical, suspension, and interior, one system at a time.</p>
         <details class="x"><summary>more</summary>
-          <p>Carburetor pulled, disassembled, jets and passages cleared, reassembled, started first crank. Starter bolts, fuel delivery, and vacuum faults diagnosed one variable at a time.</p>
+          <p>Engine and fuel: carburetor pulled, cleared, reassembled, started first crank; starter and fuel-delivery faults traced by symptom. Electrical, suspension, and interior work on a car with no parts counter, so what can't be bought gets made or adapted. Diagnosis is one variable at a time: symptom, cause, fix, then drive it.</p>
         </details>
-        <div class="chips"><i>engine</i><i>carburetion</i><i>diagnosis</i></div>
+        <div class="figs">
+          <figure><img src="img/bruce-engine.jpg" alt="Bruce, a blue and white 1971 Honda N600, hood up in the driveway with the headlights out and tools on the ground" loading="lazy"><figcaption>Hood up, headlights out, driveway service</figcaption></figure>
+          <figure><img src="img/bruce-compact.jpg" alt="Bruce parked in a space marked COMPACT, dwarfed by the cars on either side" loading="lazy"><figcaption>Compact.</figcaption></figure>
+        </div>
+        <div class="chips"><i>engine</i><i>electrical</i><i>suspension</i><i>interior</i></div>
       </article>
 
       <article class="card wide" data-n="B-03">
         <div class="k">Fabrication · Additive</div>
         <h3>3D printing</h3>
         <p>Multiple manufacturers, multiple materials, multiple slicers. Managed remotely through automated systems.</p>
+        <figure><img src="img/prusa-mk2.jpg" alt="An Original Prusa i3 MK2 with a four-filament multi-material unit on a workbench" loading="lazy"><figcaption>Prusa i3 MK2 with four-filament multi-material, brought back to life</figcaption></figure>
         <div class="chips"><i>Bambu · Prusa · Creality · Artillery</i><i>PLA · PETG · TPU · ABS</i><i>Orca · Bambu Studio · PrusaSlicer · Cura</i></div>
       </article>
 
@@ -209,7 +219,19 @@ footer{padding:28px 0 40px;font-family:var(--mono);font-size:13px;color:var(--mu
         <div class="k">Hardware · Reuse</div>
         <h3>Reused e-waste</h3>
         <p>Most of the hardware I run came out of e-waste and giveaway piles. I repair it, upgrade it, and put it back to work: desktops, laptops, a printer, a headset, a home server.</p>
+        <figure><img src="img/optiplex-raid.jpg" alt="A rescued Dell OptiPlex with a four-drive RAID stack in 3D-printed cages on top" loading="lazy"><figcaption>Rescued OptiPlex home server, four-drive RAID in printed cages</figcaption></figure>
         <div class="chips"><i>e-waste</i><i>repair</i><i>upgrade</i><i>reuse</i></div>
+      </article>
+
+      <article class="card" data-n="B-07">
+        <div class="k">Community · Repair</div>
+        <h3>Sudoroom</h3>
+        <p>Fix-it Clinic repair coach at Sudoroom, an Oakland hackerspace. I teach soldering there, and most of the laptops I hand out started as e-waste on its shelves: wiped, reflashed, put in front of someone who needs one.</p>
+        <div class="figs">
+          <figure><img src="img/sudoroom-latitude.jpg" alt="A Dell Latitude running Lubuntu on the Sudoroom workbench" loading="lazy"><figcaption>Dell Latitude, e-waste to Lubuntu, on the bench</figcaption></figure>
+          <figure><img src="img/sudoroom-chromebook.jpg" alt="Close-up of a Chromebook lid" loading="lazy"><figcaption>Chromebook, firmware reflashed, off to a classmate</figcaption></figure>
+        </div>
+        <div class="chips"><i>repair coach</i><i>soldering</i><i>Linux installs</i></div>
       </article>
 
       <article class="card" data-n="B-06">
