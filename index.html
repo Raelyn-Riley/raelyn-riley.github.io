@@ -199,11 +199,22 @@ footer{padding:28px 0 40px;font-family:var(--mono);font-size:13px;color:var(--mu
       </article>
 
       <article class="card wide" data-n="B-03">
-        <div class="k">Fabrication · Additive</div>
+        <div class="k">Fabrication · Additive (FDM)</div>
         <h3>3D printing</h3>
-        <p>Multiple manufacturers, multiple materials, multiple slicers. Managed remotely through automated systems.</p>
+        <p>FDM, start to finish: model or measure the part, slice it for strength and fit, print it, and put it to work. Printers from four manufacturers, kept running by me, driven remotely over the LAN by scripts I wrote. Things I've printed, not just the printers:</p>
+        <div class="figs" style="grid-template-columns:repeat(3,1fr)">
+          <figure><img src="img/print-mouse.jpg" alt="A blue 3D-printed honeycomb mouse shell on a laptop" loading="lazy"><figcaption>A Logitech mouse that kept breaking, rebuilt on its own board: open-design printed shell, new switches, battery holder rewired</figcaption></figure>
+          <figure><img src="img/print-mouse-inside.jpg" alt="The same mouse open, showing the original board, new switches, and rewired battery inside the printed shell" loading="lazy"><figcaption>Inside: the original board, new switches, the battery wired in</figcaption></figure>
+          <figure><img src="img/print-tourbillon.jpg" alt="White 3D-printed tourbillon gears, an escapement wheel, and a balance wheel on a textured print bed" loading="lazy"><figcaption>Tourbillon: every gear and the escapement, printed and running</figcaption></figure>
+          <figure><img src="img/print-lasko-feet.jpg" alt="Two black PETG replacement feet for a box fan on the print bed" loading="lazy"><figcaption>Replacement fan feet, PETG, open design printed and fitted</figcaption></figure>
+          <figure><img src="img/print-whistles.jpg" alt="Three blue keychain whistles on the print bed" loading="lazy"><figcaption>Keychain whistles, a plate of three from a long production run, sliced and fired remotely</figcaption></figure>
+          <figure><img src="img/print-hearts.jpg" alt="Two blue printed hearts in an open palm" loading="lazy"><figcaption>Hearts modeled from the bare math: the first print, and its twin nine months later</figcaption></figure>
+        </div>
+        <details class="x"><summary>more</summary>
+          <p>Also off the bed: enclosures for a friend's open-hardware electrolysis machine, drive cages for a home server, a masquerade mask, a dish-rack foot, and a year of Christmas ornaments. Method: FDM only, chosen on purpose for cost and turnaround. Materials PLA, PETG, TPU, ABS. Slicers OrcaSlicer, Bambu Studio, PrusaSlicer, Cura. I also repair and maintain the printers themselves: the Prusa below was e-waste.</p>
+        </details>
         <figure><img src="img/prusa-mk2.jpg" alt="An Original Prusa i3 MK2 with a four-filament multi-material unit on a workbench" loading="lazy"><figcaption>Prusa i3 MK2 with four-filament multi-material, brought back to life</figcaption></figure>
-        <div class="chips"><i>Bambu · Prusa · Creality · Artillery</i><i>PLA · PETG · TPU · ABS</i><i>Orca · Bambu Studio · PrusaSlicer · Cura</i></div>
+        <div class="chips"><i>FDM</i><i>Bambu · Prusa · Creality · Artillery</i><i>PLA · PETG · TPU · ABS</i><i>Orca · Bambu Studio · PrusaSlicer · Cura</i></div>
       </article>
 
 
@@ -211,15 +222,23 @@ footer{padding:28px 0 40px;font-family:var(--mono);font-size:13px;color:var(--mu
         <div class="k">Repair</div>
         <h3>Things I have fixed</h3>
         <p>Cars, computers, servers, and household appliances. Find the cause, fix it, keep it running.</p>
-        <div class="chips"><i>diagnosis</i><i>mechanical</i><i>electrical</i></div>
+        <p><b>Nimble Repair</b> (Berkeley, 2023–2025, contract): board-level and mechanical repair of small appliances and electronics for a pickup-and-return repair service. Toasters, blenders, lamps, and enough SodaStreams that I can diagnose one by sound.</p>
+        <details class="x"><summary>more</summary>
+          <p>Elsewhere: a Honda carburetor, a brake system flushed and bled, a laptop whose "dead" RAM was just badly seated, a home server's dropping drive traced to its own controller board, a mirror cabinet, a century-old door lock. Same method every time: isolate the variable, find the cause, fix it, verify it.</p>
+        </details>
+        <div class="chips"><i>diagnosis</i><i>appliances</i><i>board-level</i><i>mechanical</i></div>
       </article>
+
 
 
       <article class="card wide" data-n="B-05">
         <div class="k">Hardware · Reuse</div>
         <h3>Reused e-waste</h3>
         <p>Most of the hardware I run came out of e-waste and giveaway piles. I repair it, upgrade it, and put it back to work: desktops, laptops, a printer, a headset, a home server.</p>
-        <figure><img src="img/optiplex-raid.jpg" alt="A rescued Dell OptiPlex with a four-drive RAID stack in 3D-printed cages on top" loading="lazy"><figcaption>Rescued OptiPlex home server, four-drive RAID in printed cages</figcaption></figure>
+        <div class="figs">
+          <figure><img src="img/optiplex-raid.jpg" alt="A rescued Dell OptiPlex with a four-drive RAID stack in 3D-printed cages on top" loading="lazy"><figcaption>Rescued OptiPlex home server, four-drive RAID in printed cages</figcaption></figure>
+          <figure><img src="img/picloud.jpg" alt="A Raspberry Pi Compute Module 4 carrier board mounted on top of a stack of drive cages, cabled with SATA and Ethernet" loading="lazy"><figcaption>piCloud: Compute Module 4 file server on a four-drive array, printed cages, Samba over Tailscale</figcaption></figure>
+        </div>
         <div class="chips"><i>e-waste</i><i>repair</i><i>upgrade</i><i>reuse</i></div>
       </article>
 
@@ -229,7 +248,7 @@ footer{padding:28px 0 40px;font-family:var(--mono);font-size:13px;color:var(--mu
         <p>Fix-it Clinic repair coach at Sudoroom, an Oakland hackerspace. I teach soldering there, and most of the laptops I hand out started as e-waste on its shelves: wiped, reflashed, put in front of someone who needs one.</p>
         <div class="figs">
           <figure><img src="img/sudoroom-latitude.jpg" alt="A Dell Latitude running Lubuntu on the Sudoroom workbench" loading="lazy"><figcaption>Dell Latitude, e-waste to Lubuntu, on the bench</figcaption></figure>
-          <figure><img src="img/sudoroom-chromebook.jpg" alt="Close-up of a Chromebook lid" loading="lazy"><figcaption>Chromebook, firmware reflashed, off to a classmate</figcaption></figure>
+          <figure><img src="img/sudoroom-chromebook-crate.jpg" alt="A crate of Dell Chromebooks stacked on their sides" loading="lazy"><figcaption>A crate of Dell Chromebooks: firmware reflashed, Linux installed, handed out</figcaption></figure>
         </div>
         <div class="chips"><i>repair coach</i><i>soldering</i><i>Linux installs</i></div>
       </article>
@@ -268,9 +287,9 @@ footer{padding:28px 0 40px;font-family:var(--mono);font-size:13px;color:var(--mu
     <div class="sh"><span class="n">[03]</span><h2>Skills</h2><span class="rule"></span></div>
     <div class="skills">
       <div class="sk"><h3>Mechanical</h3><ul>
-        <li>Automotive: engine, fuel, electrical, brakes</li><li>Locksmithing: install, repair, rekey from spec</li><li>Hand and power tools</li></ul></div>
+        <li>Automotive: engine, fuel, electrical, brakes</li><li>Locksmithing: install, repair, rekey from spec</li><li>Shop tools: drill press, bench and angle grinders, belt sander, jigsaw, scroll saw, hydraulic press</li><li>Test bench: multimeter, oscilloscope, bench power supply, Power Probe, automotive scan tools (Snap-on trained)</li></ul></div>
       <div class="sk"><h3>Fabrication</h3><ul>
-        <li>3D printing: Bambu, Prusa, Creality, Artillery</li><li>Parametric modeling: Onshape, from measured hardware</li><li>Soldering, PCB assembly</li></ul></div>
+        <li>3D printing (FDM): Bambu, Prusa, Creality, Artillery</li><li>Parametric modeling: Onshape, from measured hardware</li><li>Soldering, PCB assembly</li></ul></div>
       <div class="sk"><h3>Systems</h3><ul>
         <li>Linux: Fedora, NixOS, Raspberry Pi</li><li>systemd, RAID, ZFS, LUKS, Tailscale</li><li>bash, Python</li></ul></div>
       <div class="sk"><h3>Design</h3><ul>
